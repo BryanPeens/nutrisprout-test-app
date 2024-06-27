@@ -1,0 +1,19 @@
+{
+  "name": "googlebooks-app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "concurrently \"npm run server:start\" \"npm run client:start\"",
+    "server:start": "cd server && node server.js",
+    "server:dev": "cd server && nodemon server.js --ignore client",
+    "client:start": "cd client && npm start",
+    "client:build": "cd client && npm run build",
+    "install": "cd server && npm install && cd ../client && npm install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  }
+}
