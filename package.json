@@ -1,5 +1,5 @@
 {
-  "name": "nutrisprout-app",
+  "name": "googlebooks-app",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -8,7 +8,11 @@
     "server:dev": "cd server && nodemon server.js --ignore client",
     "client:start": "cd client && npm start",
     "client:build": "cd client && npm run build",
-    "install": "cd server && npm install && cd ../client && npm install"
+    "install": "cd server && npm install && cd ../client && npm install",
+    "uninstall": "cd server && npm uninstall && cd ../client && npm uninstall",
+    "build:client": "cd client && npm run build",
+    "setup": "npm run install && npm run build:client",
+    "full:start": "npm run uninstall && npm run install && npm run build:client && concurrently \"npm run server:start\" \"npm run client:start\""
   },
   "keywords": [],
   "author": "",
